@@ -3,12 +3,13 @@ kind: Ingress
 metadata:
   name: retro-gaming-ingress
   annotations:
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true" 
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"    
+spec:
   tls:
     - hosts:
-        - {{DOMAIN_NAME}} 
-      secretName: {{SECRET_NAME}} # Secret to store the TLS certificate
+        - {{DOMAIN_NAME}}
+      secretName: {{SECRET_NAME}} 
   rules:
     - host: {{DOMAIN_NAME}} 
       http:
