@@ -16,7 +16,7 @@ export const gamingEras: GamingEra[] = [
     era: "1970s",
     title: "The Dawn",
     description: "The birth of arcade gaming and home consoles like the Atari 2600.",
-    image: "./assets/homepage/retro-arcade.jpg",
+    image: "/homepage/retro-arcade.jpg",
     details: {
       keyEvents: [
         "Release of the first arcade game Computer Space (1971)",
@@ -46,7 +46,7 @@ export const gamingEras: GamingEra[] = [
     era: "1980s",
     title: "The Golden Age",
     description: "Nintendo and SEGA revolutionize gaming with iconic franchises.",
-    image: "./assets/homepage/nintendo.jpg",
+    image: "/homepage/nintendo.jpg",
     details: {
       keyEvents: [
         "Pac-Man fever sweeps the world (1980)",
@@ -76,7 +76,7 @@ export const gamingEras: GamingEra[] = [
     era: "1990s",
     title: "3D Revolution",
     description: "The rise of 3D graphics and revolutionary gameplay innovations.",
-    image: "./assets/homepage/playstation.jpg",
+    image: "/homepage/playstation.jpg",
     details: {
       keyEvents: [
         "Release of the Super Nintendo (1990)",

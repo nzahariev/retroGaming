@@ -13,7 +13,7 @@ const Home = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(./assets/homepage/background.jpg)',
+            backgroundImage: 'url(/homepage/background.jpg)',
             filter: 'brightness(0.3)',
           }}
         />
