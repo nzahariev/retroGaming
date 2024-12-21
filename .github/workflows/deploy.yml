@@ -1,0 +1,48 @@
+name: Deploy to Kubernetes
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Log in to Docker Hub
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # Pull the Docker image (optional, if you don't need to rebuild)
+      - name: Pull Docker image
+        run: docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.APP_NAME }}:${{ github.sha }}
+
+      # Set up kubectl
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v4
+        with:
+          version: 'v1.28.0'
+
+      # Set env variables
+      - name: Set env variables
+        run: |
+            sed -i "s|{{DOCKER_USERNAME}}|${{ secrets.DOCKER_USERNAME }}|g" k8s/deployment.yaml
+            sed -i "s|{{APP_NAME}}|${{ secrets.APP_NAME }}|g" k8s/deployment.yaml
+            sed -i "s|{{GITHUB_SHA}}|${{ github.sha }}|g" k8s/deployment.yaml
+            sed -i "s|{{DOMAIN_NAME}}|${{ secrets.DOMAIN_NAME }}|g" k8s/ingress.yaml
+            sed -i "s|{{SECRET_NAME}}|${{ secrets.SECRET_NAME }}|g" k8s/ingress.yaml
+
+      # Apply Kubernetes Configuration
+      - name: Deploy to Kubernetes
+        run: |
+          echo "${{ secrets.KUBECONFIG }}" | base64 -d > kubeconfig
+          export KUBECONFIG=$PWD/kubeconfig
+          kubectl apply -f k8s/deployment.yaml
+          kubectl apply -f k8s/service.yaml
+          kubectl apply -f k8s/ingress.yaml

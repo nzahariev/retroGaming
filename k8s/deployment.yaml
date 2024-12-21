@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: retro-gaming
+  labels:
+    app: retro-gaming
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: retro-gaming
+  template:
+    metadata:
+      labels:
+        app: retro-gaming
+    spec:
+      containers:
+        - name: retro-gaming
+          image: {{DOCKER_USERNAME}}/{{APP_NAME}}:{{GITHUB_SHA}}
+          ports:
+            - containerPort: 80
