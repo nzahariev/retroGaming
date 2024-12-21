@@ -24,6 +24,7 @@ const Contact = () => {
     <div className="max-w-3xl mx-auto">
       <div className="text-center mb-12">
         <h1 className="text-5xl font-bold text-[#ff6b6b] mb-4">Share Your Memories</h1>
+        <h2 className="text-5xl font-bold text-[#da9191] mb-4">[ Under Development ]</h2>
         <p className="text-xl text-gray-300">
           Tell us about your favorite retro gaming moments or ask us anything!
         </p>
