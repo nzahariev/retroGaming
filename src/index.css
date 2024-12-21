@@ -1,19 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-  font-family: 'Press Start 2P';
-  src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-}
 
 :root {
   background-color: #2a2a2a;
   color: white;
 }
 
+/* Font classes */
 .font-pixel {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', system-ui, -apple-system, sans-serif;
+  /* Reduce letter spacing on mobile */
+  @media (max-width: 768px) {
+    letter-spacing: -0.5px;
+    /* Adjust font sizes for better mobile readability */
+    font-size: 90%;
+    line-height: 1.5;
+  }
 }
 
 /* Custom scrollbar */
