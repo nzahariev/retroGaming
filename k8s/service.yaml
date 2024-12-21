@@ -4,7 +4,7 @@ metadata:
   name: retro-gaming-service
 spec:
   selector:
-    app: retro-gaming-app
+    app: retro-gaming
   ports:
     - protocol: TCP
       port: 80 
