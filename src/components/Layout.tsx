@@ -82,8 +82,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
           <p className="text-sm mb-4 md:mb-0">
             Disclaimer: The content of the webpage is AI generated!
-
-            © 2024 RetroVerse. All rights reserved.
           </p>
           <div className="flex space-x-4">
             <a href="#" className="hover:text-[#ff6b6b] transition-colors">
