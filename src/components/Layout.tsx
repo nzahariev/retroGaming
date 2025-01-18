@@ -81,7 +81,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <footer className="bg-[#1a1a1a] border-t-2 border-[#ff6b6b] px-4 py-6 mt-auto">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
           <p className="text-sm mb-4 md:mb-0">
-            Disclaimer: The content of the webpage is AI generated! TEST
+            Disclaimer: The content of the webpage is AI generated!
           </p>
           <div className="flex space-x-4">
             <a href="#" className="hover:text-[#ff6b6b] transition-colors">
