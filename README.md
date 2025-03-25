@@ -33,4 +33,4 @@ http://localhost:3000
 ## 🌐 Live Demo
 
 Check out the live project on GitHub:  
-👉 [https://github.com/nzahariev/retroGaming](https://github.com/nzahariev/retroGaming)
+👉 [https://retrogaming.zaharievi.dev/](https://retrogaming.zaharievi.dev/)
